@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="store"
+            type="com.example.mvvmretrofitcoroutines.model.StoreItems" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="3dp">
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="200dp">
+
+
+                    <ImageView
+                        android:id="@+id/imgBasic"
+                        android:layout_width="match_parent"
+                        android:layout_height="200dp"
+                        android:background="@drawable/ic_launcher_background"
+                        android:contentDescription="@string/photo"
+                        android:scaleType="fitXY"
+                        app:image="@{store.image}" />
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="10dp">
+
+                    <TextView
+                        android:id="@+id/tvTitle"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        tools:text="title"
+                        android:text= "@{store.title}">
+
+                    </TextView>
+
+                    <TextView
+                        android:id="@+id/tvDesc"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/tvTitle"
+                        tools:text="category"
+                        android:text="@{store.description}">
+
+                    </TextView>
+
+                </RelativeLayout>
+
+            </LinearLayout>
+
+        </androidx.cardview.widget.CardView>
+
+
+    </LinearLayout>
+
+
+</layout>
